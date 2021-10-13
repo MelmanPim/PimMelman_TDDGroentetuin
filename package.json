@@ -1,0 +1,23 @@
+{
+  "name": "tddgroentetuin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelmanPim/PimMelman_TDDGroentetuin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MelmanPim/PimMelman_TDDGroentetuin/issues"
+  },
+  "homepage": "https://github.com/MelmanPim/PimMelman_TDDGroentetuin#readme",
+  "devDependencies": {
+    "jest": "^27.2.5"
+  }
+}
