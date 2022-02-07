@@ -3,8 +3,8 @@ const checkEnvironment = (factor) => {
 }
 
 // yield from one plant
-const getYieldForPlant = (plant, environmentFactors) => {
-    return plant.yield * checkEnvironment(plant.factor.sun[environmentFactors.sun]) * checkEnvironment(plant.factor.wind[environmentFactors.wind])
+const getYieldForPlant = (input, environmentFactors) => {
+    return input.yield * checkEnvironment(input.factor.sun[environmentFactors.sun]) * checkEnvironment(input.factor.wind[environmentFactors.wind])
 
     // 30 * -50 = -1500 moet 15 zijn
     // (100+ -50)  = 50
@@ -29,20 +29,20 @@ const getCostForCrop = (input) => {
     return input.numCrops * input.crop.cost
 };
 
-// get revenue without environmental factors
-const getRevenueForCrop = (input) => {
-    return getYieldForCrop(input) * input.crop.value
+// get revenue with environmental factors
+const getRevenueForCrop = (input, environmentFactors) => {
+    return getYieldForCrop(input, environmentFactors) * input.crop.value
 };
 
-// get profit without environmental factors
-const getProfitForCrop = (input) => {
-    return getRevenueForCrop(input) - getCostForCrop(input)
+// get profit with environmental factors
+const getProfitForCrop = (input, environmentFactors) => {
+    return getRevenueForCrop(input, environmentFactors) - getCostForCrop(input)
 };
 
 // get total profit without environmental factors
-const getTotalProfit = ({crops}) => {
+const getTotalProfit = ({crops}, environmentFactors) => {
     return crops.reduce((partial_sum, crop) => { // partial_sum adds all the numbers
-        return partial_sum + getProfitForCrop(crop)
+        return partial_sum + getProfitForCrop(crop, environmentFactors)
     }, 0)
 };
 
