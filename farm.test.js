@@ -186,7 +186,7 @@ describe("getCostForCrop", () => {
         const corn = {
             name: "corn",
             yield: 30,
-            cost: 1,
+            price: 1,
             factor: {
                 sun: {
                     low: -50,
@@ -283,7 +283,7 @@ describe("getProfitForCrop", () => {
             wind: "high",
         };
 
-        expect(getProfitForCrop(input, environmentFactors)).toBe(25);
+        expect(getProfitForCrop(input, environmentFactors)).toBe(190);
     });
 });
 
@@ -343,6 +343,6 @@ describe("getTotalProfit", () => {
             wind: "high",
         };
 
-        expect(getTotalProfit({crops}, environmentFactors)).toBe(43);
+        expect(getTotalProfit({crops}, environmentFactors)).toBe(236);
     });
 });

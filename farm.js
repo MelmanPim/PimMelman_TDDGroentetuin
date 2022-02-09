@@ -26,7 +26,7 @@ const getTotalYield = ({crops}, environmentFactors) => {
 
 //calculate the cost for a crop
 const getCostForCrop = (input) => {
-    return input.numCrops * input.crop.cost
+    return input.numCrops * input.crop.price
 };
 
 // get revenue with environmental factors
